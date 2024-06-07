@@ -1,0 +1,325 @@
+ html {
+   font-size: 14px;
+ }
+
+ body {
+   font-family: 'Noto Sans JP', sans-serif;
+   
+ }
+
+ h1 {
+   font-size: 1.5rem;
+ }
+ 
+  h3 {
+   font-size: 1.25rem;
+ }
+
+ a {
+   color: #888888;
+   text-decoration: none !important;
+ }
+
+ a:hover {
+     color: #CCCCCC;
+ }
+ 
+ /* トップページ */
+
+.ecshop-container {
+    position: relative;
+    text-align: center;
+    /* 他のスタイル設定 */
+}
+.shelf-container {
+	display: inline-flex;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    background-image: url('/images/top.png');
+    background-size: cover;
+    background-position: center;
+    background-position: center;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.shelf-container2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    background-image: url('/images/top2.png');
+    background-size: cover;
+    background-position: center;
+    background-position: center;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.product img {
+    max-width: 200%;
+    max-height: 100%;
+    object-fit: contain;
+    
+}
+
+/* ショッピングカート */
+.cart-container {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 100px; /* カート画像の幅を調整 */
+    height: 100px; /* カート画像の高さを調整 */
+    z-index: 1000; /* 他の要素の上に表示 */
+}
+
+.cart-container img {
+    width: 150%;
+    height: 150%;
+    object-fit: contain;
+}
+ 
+ .container pb-5 ecshop-container {
+	 background-color: #fff; /* 背景色を白に設定 */
+    color: #000; /* 文字色を黒に設定 */
+    /* 他のスタイルを必要に応じて追加 */
+}
+ 
+ 
+.container.ecshop-container {
+    background-color: #000;
+    color: #fff; /* 文字色を白に設定 */
+    padding: 20px; /* 必要に応じてパディングを追加 */
+    border-radius: 10px; /* 必要に応じて角丸を追加 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 必要に応じて影を追加 */
+}
+
+.container.ecshop-container.pt-4.pb-5 {
+    background-color: #fff; /* 背景色を白に設定 */
+    color: #000; /* 文字色を黒に設定 */
+    /* 他のスタイルを必要に応じて追加 */
+}
+
+.mb-4 text-center {
+	 background-color: #fff; /* 背景色を白に設定 */
+    color: #000; /* 文字色を黒に設定 */
+    /* 他のスタイルを必要に応じて追加 */
+	
+}
+
+
+ footer {
+    width: 100%;
+    height: 60px;
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    margin-top: auto;
+}
+
+ .ecshop-wrapper {
+   min-height: 100vh;
+   position: relative;
+   padding-bottom: 60px;
+   box-sizing: border-box;
+ }
+
+ .ecshop-navbar {
+   min-height: 60px;
+   background-color: #343a40;
+ }
+ 
+ .ecshop-navbar .navbar-brand img {
+            max-height: 75px;
+        }
+        .ecshop-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .breadcrumb {
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+        .breadcrumb a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .breadcrumb .breadcrumb-item.active {
+            color: #6c757d;
+        }
+        .ecshop-pre-wrap {
+            white-space: pre-wrap;
+        }
+        .ecshop-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+        }
+        .fw-bold {
+            font-weight: bold;
+ }
+ 
+ 
+  #sidebar {
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+        }
+        #sidebar .nav-link {
+            color: #fff;
+        }
+        #sidebar .nav-link.active {
+            background-color: #343a40;
+        }
+        #sidebar .nav-link:hover {
+            background-color: #495057;
+        }
+        .ecshop-navbar {
+            margin-bottom: 20px;
+        }
+        .ecshop-container {
+            max-width: 1200px;
+        }
+ /* ページネーション */
+ .ecshop-page-link {
+   color: #000;
+ }
+
+ .ecshop-page-link:hover {
+   color: #fff;
+   background-color: #6c757d;
+   border-color: #6c757d;
+ }
+
+ .ecshop-active {
+    background-color: #CCCCCC !important;
+    border-color: #CCCCCC !important;
+    color: #000;
+ }
+ 
+  .ecshop-pre-wrap {
+   /* 改行文字で行を折り返す */
+   white-space: pre-wrap;
+ }
+
+ /* 登録ボタン */
+ .ecshop-btn {   
+background-color: #000;
+    
+}
+
+.ecshop-btn:hover {
+background-color: #333; 
+}
+
+/* 削除モーダル */
+.ecshop-link-danger {
+     color: #f2594b;
+ }
+ 
+ .ecshop-link-danger:hover {
+     color: #a63c3c;
+ }
+ 
+ .ecshop-btn-danger {
+     background-color: #f2594b !important;
+     transition: 0.1s;
+ }
+ 
+ .ecshop-btn-danger:hover {
+   opacity: 0.8;   
+ }
+ /* ナビゲーションバー */
+  /* Custom Navbar Styles */
+        .navbar {
+            background-color: #343a40; /* Dark background */
+            padding: 1rem 2rem;
+        }
+
+        .navbar-brand {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,..."); /* Custom icon */
+        }
+
+        .nav-link {
+            color: #ffffff;
+            margin: 0 0.5rem;
+        }
+
+        .nav-link:hover {
+            color: #f8f9fa;
+        }
+
+        .dropdown-menu {
+            background-color: #343a40;
+            border: none;
+        }
+
+        .dropdown-item {
+            color: #ffffff;
+        }
+
+        .dropdown-item:hover {
+            background-color: #495057;
+        }
+
+        .dropdown-divider {
+            border-color: #495057;
+        }
+        
+        .ecshop-card-link {
+   transition: 0.3s;
+ }
+ 
+ .ecshop-card-link:hover {
+   opacity: 0.7;
+ }
+ 
+ .ecshop-horizontal-card-image {
+   width: 100%;
+   height: 240px;
+   object-fit: cover;
+ }
+
+ @media screen and (min-width: 1400px) {
+   .ecshop-container {
+     max-width: 1200px;
+   }
+
+
+ }

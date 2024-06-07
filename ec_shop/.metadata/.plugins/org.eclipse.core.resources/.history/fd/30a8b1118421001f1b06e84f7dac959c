@@ -1,0 +1,22 @@
+-- goodsテーブル
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (1, 'Tシャツ', 'goods01.jpg', '柔らかく快適なコットン素材で作られたカジュアルなTシャツです。' ,3600 ,10, 1);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (2, 'スカート', 'goods02.jpg', 'シンプルで上品なデザインのフレアスカート。どんなコーディネートにも合わせやすい。' ,2800 ,8, 1);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (3, '靴', 'goods03.jpg','歩きやすさとスタイリッシュさを兼ね備えたシューズ。通勤やお出かけに最適。' ,27000, 3, 1);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (4, 'ドレッサー', 'goods04.jpg','大容量収納付きのエレガントなドレッサー。朝の準備が楽しくなります。',160000, 2, 2);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (5, '棚', 'goods05.jpg', 'モダンデザインの多目的棚。リビングやオフィスの収納にぴったり。' ,280000, 5, 2);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (6, '照明', 'goods06.jpg', 'シンプルでモダンなデザインのLED照明。どんな部屋にもマッチします。' ,18000, 6, 2);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (7, 'トースター', 'goods07.jpg', 'サクサクのトーストが焼ける高機能トースター。朝食が楽しみになります。' ,10000, 15, 3);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (8, '掃除機', 'goods08.jpg', '強力な吸引力と軽量設計で、家中を簡単に掃除できます。' ,30000, 3, 3);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (9, 'ミキサー', 'goods09.jpg', '強力なモーターでスムージーやスープが簡単に作れるミキサーです。' ,3400, 2, 3);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (10, 'アイシャドウ', 'goods10.jpg', '高発色で長持ちする、トレンディなカラーが揃ったアイシャドウパレット。' ,1450, 66, 4);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (11, 'リップ', 'goods11.jpg', '保湿成分配合で潤いをキープする、鮮やかなカラーのリップスティック。' ,980, 138, 4);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (12, '香水', 'goods12.jpg', 'フレッシュでエレガントな香りが一日中続く、上品なフレグランス。' ,1700, 15, 4);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (13, 'コップ', 'goods13.jpg', 'シンプルで使いやすいデザインのガラスコップ。日常使いに最適。' ,12800, 1, 5);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (14, '花瓶', 'goods14.jpg', '美しいフォルムとシンプルなデザインの花瓶。どんなお花も引き立てます。' ,1300, 13, 5);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (15, '観葉植物', 'goods15.jpg', '部屋の空気を浄化し、癒しをもたらす観葉植物。手入れも簡単。' ,2700, 14, 5);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (16, 'おもちゃ', 'goods16.jpg', '子供たちの創造力を刺激する、カラフルで楽しいおもちゃです。' ,880, 99, 6);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (17, 'ボール', 'goods17.jpg', '室内外で遊べる、耐久性に優れた多目的ボール。' ,580 ,100, 6);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (18, 'スライム', 'goods18.jpg', '柔らかくて伸びる、楽しい触感のスライム。ストレス解消にも最適。' ,300, 14, 6);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (19, 'パン', 'goods19.jpg', '外はカリッと中はふんわりの焼きたてパン。朝食やおやつにどうぞ。' ,280, 10, 7);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (20, 'ケーキ', 'goods20.jpg', 'ふんわりとしたスポンジと濃厚なクリームが特徴の美味しいケーキ。',450 ,18, 7);
+INSERT IGNORE INTO goods (id, name, image_name, description, price, stock, category_id) VALUES (21, 'コーヒー豆', 'goods21.jpg', '豊かな香りと深い味わいが楽しめる、新鮮なコーヒー豆。毎日のリフレッシュに。' ,150, 77, 7);

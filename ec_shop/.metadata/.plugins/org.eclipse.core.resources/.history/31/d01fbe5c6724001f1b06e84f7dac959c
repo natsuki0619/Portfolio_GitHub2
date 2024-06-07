@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+         <div th:replace="~{fragment :: meta}"></div>
+         <div th:replace="~{fragment :: styles}"></div>
+        <title>EC SHOP</title>
+    </head>
+    <body>
+         <div class="ecshop-wrapper">
+             <!-- ヘッダー -->
+             <div th:replace="~{fragment :: header}"></div>
+             <main>
+                <div class="container pt-4 pb-5 ecshop-container">
+                    <div th:if="${param.loggedIn}" class="alert alert-secondary">
+                        ログインしました。
+                    </div>
+
+                    <div th:if="${param.loggedOut}" class="alert alert-secondary">
+                        ログアウトしました。
+                    </div>
+
+                     <div th:if="${successMessage}" class="alert alert-secondary">
+                         <span th:text="${successMessage}"></span>
+                     </div>
+                     
+                      <div class="d-flex justify-content-center">                                            
+                         <form method="get" th:action="@{/houses}" class="mb-5 ecshop-search-form">
+                             <div class="input-group">
+                                 <input type="text" class="form-control" name="keyword" th:value="${keyword}" placeholder="商品名">
+                                 <button type="submit" class="btn text-white shadow-sm ecshop-btn">検索</button> 
+                             </div>               
+                         </form>                        
+                     </div>                                        
+                      
+                     <div class="shelf-container" >
+						 
+       <div th:each="goods : ${goods}" th:if="${goods.id == 1}" class="product" th:id="${'product' + goods.id}" draggable="true" ondragstart="drag(event)" th:data-price="${goods.price}">
+    <div class="product-overlay">
+        <a class="btn btn-border" th:href="@{'/goods/show/' + ${goods.id}}"><span th:text="${goods.name}"></span></a>
+    </div>
+    <img th:src="@{'images/' + ${goods.image}}" th:alt="${goods.name}">
+</div>
+       <div th:each="goods : ${goodsList}" 
+     th:unless="${goods.id != 2}" 
+     class="product" 
+     th:id="${'product' + goods.id}" 
+     draggable="true" 
+     ondragstart="drag(event)" 
+     th:data-price="${goods.getPrice()}"> <!-- 商品の値段を取得して使用 -->
+    <div class="product-overlay">
+        <a class="btn btn-border" th:href="@{'/goods/show/' + ${goods.id}}"><span th:text="${goods.name}"></span></a>
+    </div>
+    <img th:src="@{'images/' + ${goods.image}}" th:alt="${goods.name}">
+</div>
+        <div class="product" id="product1" draggable="true" ondragstart="drag(event)" data-price="3600">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/3}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods03.png" alt="靴">
+        </div>
+         <div class="product" id="product1" draggable="true" ondragstart="drag(event)" data-price="3600">
+			 <div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/4}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods04.png" alt="商品1">
+        </div>
+        <div class="product" id="product1" draggable="true" ondragstart="drag(event)" data-price="3600">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/5}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods05.png" alt="商品2">
+        </div>
+        <div class="product" id="product1" draggable="true" ondragstart="drag(event)" data-price="3600">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/6}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods06.png" alt="商品2">
+        </div>
+    </div>
+     <div class="shelf-container2">
+        <div class="product2">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/7}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods07.png" alt="トースター">
+        </div>
+        <div class="product2">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/8}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods08.png" alt="商品2">
+        </div>
+        <div class="product2">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/9}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods09.png" alt="商品3">
+        </div>
+         <div class="product3">
+			 <div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/10}"><span>eye shadow</span></a>
+        </div>
+            <img src="images/goods10.png" alt="アイシャドウ">
+        </div>
+        <div class="product3">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/11}"><span>lipstick</span></a>
+        </div>
+            <img src="images/goods11.png" alt="リップ">
+        </div>
+        <div class="product3">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/12}"><span>perfume</span></a>
+        </div>
+            <img src="images/goods12.png" alt="香水">
+        </div>
+    </div>
+    
+    <div class="shelf-container">
+        <div class="product">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/13}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods13.png" alt="商品1">
+        </div>
+        <div class="product">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/14}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods14.png" alt="商品2">
+        </div>
+        <div class="product">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/15}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods15.png" alt="商品3">
+        </div>
+         <div class="product">
+			 <div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/16}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods16.png" alt="商品1">
+        </div>
+        <div class="product">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/17}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods17.png" alt="商品2">
+        </div>
+        <div class="product">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/18}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods18.png" alt="商品2">
+        </div>
+    </div>
+    
+     <div class="shelf-container2">
+        <div class="product2">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/19}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods19.png" alt="商品1">
+        </div>
+        <div class="product2">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/20}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods20.png" alt="商品2">
+        </div>
+        <div class="product2">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/21}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods21.png" alt="商品3">
+        </div>
+         <div class="product3">
+			 <div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/22}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods22.png" alt="商品1">
+        </div>
+        <div class="product3">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/23}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods23.png" alt="商品2">
+        </div>
+        <div class="product3">
+			<div class="product-overlay">
+            <a class="btn btn-border" th:href="@{/goods/show/24}"><span>sneakers</span></a>
+        </div>
+            <img src="images/goods24.png" alt="商品2">
+        </div>
+    </div>
+                </div>
+    
+     <div class="cart-container" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="images/cart.png" alt="ショッピングカート" class="cart-image">
+    <div id="total-price" data-total="0" class="total-price">合計金額: ¥0</div>
+</div>
+
+
+                </div>
+            </main>
+             <!-- フッター -->
+             <div th:replace="~{fragment :: footer}"></div>
+         </div>
+             <div th:replace="~{fragment :: scripts}"></div>
+             <script src="/js/drag-and-drop.js"></script>
+    </body>
+</html>

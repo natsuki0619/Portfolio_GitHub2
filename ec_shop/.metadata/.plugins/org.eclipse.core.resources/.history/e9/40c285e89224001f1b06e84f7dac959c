@@ -1,0 +1,19 @@
+package com.example.ecshop.Repository;
+
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.ecshop.entity.Goods;
+
+public interface GoodsRepository extends JpaRepository<Goods, Integer> {
+	public Page<Goods> findByNameLike(String keyword, Pageable pageable);
+
+	public Page<Goods> findByPriceLessThanEqual(Integer price, Pageable pageable);
+
+	public List<Goods> findTop10ByOrderByCreatedAtDesc();
+
+	public List<Goods> findByNameLike();
+}

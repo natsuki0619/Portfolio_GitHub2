@@ -1,0 +1,179 @@
+ <!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <div th:replace="~{fragment :: meta}"></div> 
+    <div th:replace="~{fragment :: styles}"></div> 
+    
+   
+    <title>商品一覧</title>       
+</head>
+<body>
+    <div class="ecshop-wrapper">
+        <!-- ヘッダー -->
+        <div th:replace="~{fragment :: header}"></div>
+
+        <div class="container-fluid content">
+            <div class="row">
+                <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                    <div class="position-sticky pt-md-5">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                    </svg>
+                                    <span class="ml-2">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+                                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                        <polyline points="13 2 13 9 20 9"></polyline>
+                                    </svg>
+                                    <span class="ml-2">Orders</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
+                                        <circle cx="9" cy="21" r="1"></circle>
+                                        <circle cx="20" cy="21" r="1"></circle>
+                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                    </svg>
+                                    <span class="ml-2">Products</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    <span class="ml-2">Customers</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2">
+                                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                                    </svg>
+                                    <span class="ml-2">Reports</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
+                                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                        <polyline points="2 17 12 22 22 17"></polyline>
+                                        <polyline points="2 12 12 17 22 12"></polyline>
+                                    </svg>
+                                    <span class="ml-2">Integrations</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+                    <h1 class="h2">商品一覧</h1>
+
+                    <div class="container pt-4 pb-5 ecshop-container">
+                        <div class="row justify-content-center">
+                            <div class="col-xxl-9 col-xl-10 col-lg-11">
+                                
+                                <h1 class="mb-4 text-center">商品一覧</h1>   
+                                
+                                <div class="d-flex justify-content-end">                                
+                                    <a th:href="@{/admin/goods/register}" class="btn text-white shadow-sm mb-3 ecshop-btn">登録</a>
+                                </div>
+                                
+                                <div th:if="${successMessage}" class="alert alert-secondary">
+                                 <span th:text="${successMessage}"></span>
+                             </div>                                                                                 
+                                                                                   
+                                
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">商品名</th>
+                                            <th scope="col">商品説明</th>
+                                            <th scope="col">価格</th>
+                                            <th scope="col">在庫数</th>
+                                            <th scope="col">カテゴリ</th>
+                                            <th scope="col"></th>
+                                            <th scope="col"></th>                                    
+                                        </tr>
+                                    </thead>   
+                                    <tbody> 
+										                                                    
+                                        <tr th:each="goods : ${goodsPage}">
+                                            <td th:text="${goods.getId()}"></td>
+                                            <td th:text="${goods.getName()}"></td>
+                                            <td th:text="${goods.getDescription()}"></td>
+                                            <td th:text="${goods.getPrice()}"></td>
+                                            <td th:text="${goods.getStock()}"></td>
+                                            <td th:text="${goods.getCategoryId()}"></td>
+                                            <td><a th:href="@{/admin/goods/__${goods.getId()}__}">詳細</a></td>
+                                            
+                                             <td><a href="#" class="ecshop-link-danger" data-bs-toggle="modal" th:data-bs-target="${'#deleteGoodsModal' + goods.getId()}">削除</a></td>     
+
+                                         <!-- 削除用モーダル -->
+                                         <div class="modal fade" th:id="${'deleteGoodsModal' + goods.getId()}" tabindex="-1" th:aria-labelledby="${'deleteGoodsModalLabel' + goods.getId()}">
+                                             <div class="modal-dialog">
+                                                 <div class="modal-content">
+                                                     <div class="modal-header">
+                                                         <h5 class="modal-title" th:id="${'deleteGoodsModalLabel' + goods.getId()}" th:text="${goods.getName() + 'を削除してもよろしいですか？'}"></h5>
+                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+                                                     </div>
+                                                     <div class="modal-footer">
+                                                         <form method="post"th:action="@{/admin/goods/__${goods.getId()}__/delete}">
+                                                             <button type="submit" class="btn ecshop-btn-danger text-white shadow-sm">削除</button>
+                                                         </form>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </div>                                                                                                   
+                                        </tr>                                      
+                                    </tbody>
+                                </table>
+                                
+                               <!-- ページネーション -->
+                             <div th:if="${goodsPage.getTotalPages() > 1}" class="d-flex justify-content-center">
+                                 <nav aria-label="商品一覧ページ">
+                                     <ul class="pagination">
+                                         <li class="page-item">
+                                             <span th:if="${goodsPage.isFirst()}" class="page-link disabled">前</span>
+                                             <a th:unless="${goodsPage.isFirst()}" th:href="@{/admin/goods(page = ${goodsPage.getNumber() - 1})}" class="page-link ecshop-page-link">前</a>
+                                         </li>
+                                         <li th:each="i : ${#numbers.sequence(0, goodsPage.getTotalPages() - 1)}" class="page-item">
+                                             <span th:if="${i == goodsPage.getNumber()}" class="page-link active ecshop-active" th:text="${i + 1}"></span>
+                                             <a th:unless="${i == goodsPage.getNumber()}" th:href="@{/admin/goods(page = ${i})}" class="page-link ecshop-page-link" th:text="${i + 1}"></a>
+                                         </li>
+                                         <li class="page-item">                        
+                                             <span th:if="${goodsPage.isLast()}" class="page-link disabled">次</span>
+                                             <a th:unless="${goodsPage.isLast()}" th:href="@{/admin/goods(page = ${goodsPage.getNumber() + 1})}" class="page-link ecshop-page-link">次</a>
+                                         </li>
+                                     </ul>
+                                 </nav> 
+                             </div>                                                                   
+                        </div>
+                    </div>
+                </div>              
+            </main>
+            </div>
+        </div>
+
+<!-- フッター -->
+       <div class="footer" th:replace="~{fragment :: footer}"></div>
+    </div>
+
+    <div th:replace="~{fragment :: scripts}"></div>  
+</body>
+</html>

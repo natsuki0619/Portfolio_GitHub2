@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Matsubara ポートフォリオ</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="css/ress.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" media="all" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+  <div class="wrapper">
+    <!-- header -->
+    <header class="header ">
+      <div class="container">
+        <h1 class="header-logo">
+          <a href="index.html">MATSUBARA NATSUKI</a>
+        </h1>
+        <nav class="gnav">
+          <ul class="gnav-list">
+            <li class="gnav-item"><a href="#about">ABOUT THIS SITE</a></li>
+            <li class="gnav-item"><a href="#works">WORKS</a></li>
+            <li class="gnav-item"><a href="#skill">SKILL</a></li>
+            <li class="gnav-item"><a href="#aboutme">ABOUT ME</a></li>
+            <li class="gnav-item"><a href="#daiary">DIARY</a></li>
+            <li class="gnav-item"><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- /header -->
+    <main class="content">
+      <article class="article">
+        <div class="article-container">
+          <h2 class="article-title">NAGOYAMESHI</h2>
+          <div class="article-body">
+            <link rel="stylesheet" href="styles.css">
+            </head>
+            <body>
+              <div class="gallery">
+                <div class="image">
+                  <img src="img/works-detail/works3-1.png" alt="Image 1"
+                    onclick="openModal('img/works-detail/works3-1.png')">
+                </div>
+                <div class="image">
+                  <img src="img/works-detail/works3-2.png" alt="Image 2"
+                    onclick="openModal('img/works-detail/works3-2.png')">
+                </div>
+                <div class="image">
+                  <img src="img/works-detail/works3-3.png" alt="Image 3"
+                    onclick="openModal('img/works-detail/works3-3.png')">
+                </div>
+                <div class="image">
+                  <img src="img/works-detail/works3-4.png" alt="Image 4"
+                    onclick="openModal('img/works-detail/works3-4.png')">
+                </div>
+                <div class="image">
+                  <img src="img/works-detail/works3-5.png" alt="Image 5"
+                    onclick="openModal('img/works-detail/works3-5.png')">
+                </div>
+                <div class="image">
+                  <img src="img/works-detail/works3-6.png" alt="Image 6"
+                    onclick="openModal('img/works-detail/works3-6.png')">
+                </div>
+                <div class="image">
+                  <img src="img/works-detail/works3-7.png" alt="Image 7"
+                    onclick="openModal('img/works-detail/works3-7.png')">
+                </div>
+                <div class="image">
+                  <img src="img/works-detail/works3-8.png" alt="Image 8"
+                    onclick="openModal('img/works-detail/works3-8.png')">
+                </div>
+                <div class="image">
+                  <img src="img/works-detail/works3-9.png" alt="Image 9"
+                    onclick="openModal('img/works-detail/works3-9.png')">
+                </div>
+              </div>
+              <div id="modal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img class="modal-content" id="modal-image">
+              </div>
+              <script src="script.js"></script>
+              <p>
+                愛知県のグルメサイト
+              </p>
+              <h3>URL</h3>
+              <p><a href="https://nagoyameshi0501-db6fb4a1362d.herokuapp.com/" target="_blank"
+                  rel="noopener">NAGOYAMESHI</a></p>
+              <h3>code</h3>
+              <p><a href="https://github.com/natsuki0619/Portfolio_GitHub/tree/main/nagoyameshi" target="_blank" rel="noopener">Git Hub</a></p>
+              <h3>主な機能</h3>
+              <p><br>会員登録機能: ユーザーはアカウントを作成し、プラットフォームに参加します。
+                <br> 有料会員登録機能: ユーザーは特典を受けるために有料会員として登録、カード決済ができます。
+                <br>サブスクリプション決済機能: 有料会員登録のためのカード決済処理を提供します。
+                <br>会員情報編集機能: ユーザーは登録情報を編集できます。
+                <br>お気に入り登録機能: ユーザーはお気に入りの店舗を登録できます。
+                <br>レビュー登録機能: ユーザーは店舗に対するレビューを投稿できます。
+              <p class="content">店舗情報編集機能: 管理者は店舗情報を編集できます。
+                <br>カテゴリ編集機能: 管理者はカテゴリ機能を編集できます。
+                <br>売り上げ集計機能: 管理者は売り上げを集計できます。
+                <br>店舗情報、会員情報CSV出力機能: 管理者は店舗情報、会員情報をCSV形式で出力できます。
+              </p>
+              </p>
+              <h3>サイトの目的</h3>
+              <p>NAGOYAMESHIは、名古屋地域の飲食店を対象としたオンラインプラットフォームです。
+                このプラットフォームは、ユーザーが会員登録を行い、さらに有料会員登録を行うことでお気に入りの店舗を登録し、レビューを投稿することができます。
+                有料会員はサブスプリクション機能により毎月カード決済が行われます。
+                管理者は店舗情報を編集し、売り上げを集計することができます。
+                このプロジェクトでは、JavaベースのSpring Bootフレームワークを使用してバックエンドを構築し、
+                MySQLデータベースを使用してデータの永続化を行いました。
+                フロントエンドではThymeleafを使用し、ユーザーインターフェースを構築しました。
+                また、セキュリティのためにSpring Securityを導入し、ユーザーの認証とアクセス制御を実装しました。
+                さらに、Herokuを使用してアプリケーションをデプロイしました。</p>
+              <h3>使用技術</h3>
+              <p>Spring Boot/HTML/CSS/Java/JavaScript/Spring Security/Spring Data JPA/<br>
+                Thymeleaf/MySQL/Heroku</p>
+          </div>
+          <div class="home-link">
+            <a href="index.html#works">Works一覧へ</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="page-top" id="js-page-top">
+        <span class="material-icons-outlined">expand_less</span>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="copyright">&copy;MATSUBARA NATSUKI</div>
+    </footer>
+    <!-- /footer -->
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type='text/javascript' src="js/script.js"></script>
+</body>
+
+</html>

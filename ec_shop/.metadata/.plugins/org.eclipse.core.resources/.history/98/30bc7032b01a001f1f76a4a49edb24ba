@@ -1,0 +1,5 @@
+package com.example.ecshop.entity;
+
+public class Goods {
+
+}

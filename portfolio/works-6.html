@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Matsubara ポートフォリオ</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="css/ress.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" media="all" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- header -->
+    <header class="header ">
+      <div class="container">
+        <h1 class="header-logo">
+          <a href="index.html">MATSUBARA NATSUKI</a>
+        </h1>
+        <nav class="gnav">
+          <ul class="gnav-list">
+            <li class="gnav-item"><a href="#about">ABOUT THIS SITE</a></li>
+            <li class="gnav-item"><a href="#works">WORKS</a></li>
+            <li class="gnav-item"><a href="#skill">SKILL</a></li>
+            <li class="gnav-item"><a href="#aboutme">ABOUT ME</a></li>
+            <li class="gnav-item"><a href="#daiary">DIARY</a></li>
+            <li class="gnav-item"><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- /header -->
+
+    <main class="content">
+
+      <article class="article">
+        <div class="article-container">
+          <h2 class="article-title">EC SHOP</h2>
+          <div class="article-body">
+            <link rel="stylesheet" href="styles.css">
+            </head>
+
+            <body>
+              <div class="gallery">
+                <div class="image">
+                  <img src="img/works-detail/works6-1.png" alt="Image 1"
+                    onclick="openModal('img/works-detail/works6-1.png')">
+                </div>
+                <div class="image">
+                  <img src="img/works-detail/works6-2.png" alt="Image 2"
+                    onclick="openModal('img/works-detail/works6-2.png')">
+                </div>
+                <div class="image">
+                  <img src="img/works-detail/works6-3.png" alt="Image 3"
+                    onclick="openModal('img/works-detail/works6-3.png')">
+                </div>
+                <div class="image">
+                  <img src="img/works-detail/works6-4.png" alt="Image 4"
+                    onclick="openModal('img/works-detail/works6-4.png')">
+                </div>
+                <div class="image">
+                  <img src="img/works-detail/works6-5.png" alt="Image 5"
+                    onclick="openModal('img/works-detail/works6-5.png')">
+                </div>
+                <div class="image">
+                  <img src="img/works-detail/works6-6.png" alt="Image 6"
+                    onclick="openModal('img/works-detail/works6-6.png')">
+                </div>
+              </div>
+              <div id="modal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img class="modal-content" id="modal-image">
+              </div>
+              <script src="script.js"></script>
+              <p>
+                ECサイト
+              </p>
+
+              <h3>code</h3>
+              <p><a href="" target="_blank" rel="noopener">Git Hub</a></p>
+              <h3>主な作成予定機能</h3>
+              <p><br> 会員登録機能: ユーザーは会員登録、商品を購入できます。
+                <br>決済機能: 商品支払いのためカード決済処理ができます。
+                <br>会員情報編集機能: ユーザーは登録情報を編集できます。
+                <br>お気に入り登録機能: ユーザーはお気に入りの商品を登録できます。
+                <br>レビュー登録機能: ユーザーは商品に対するレビューを投稿できます。
+              <p class="content">商品編集機能: 管理者は商品情報を編集できます。
+                <br>カテゴリ機能編集機能: 管理者はカテゴリ機能を編集できます。
+                <br>売り上げ集計機能: 管理者は売り上げを集計できます。
+                <br>店舗情報、会員情報CSV出力機能: 管理者は店舗情報、会員情報をCSV形式で出力できます。
+              </p>
+              </p>
+              <h3>サイトの目的</h3>
+              <p>EC SHOPはドラッグアンドドロップで直感的な操作方法を行い、
+                ユーザーは商品をかごに簡単に追加することができます。
+                これにより、シームレスな買い物体験を提供します。
+                ドラッグアンドドロップ機能は、ユーザーにとって新鮮で楽しい買い物体験を提供します。
+                商品をかごに追加するプロセスがゲームのように感じられ、ユーザーの興味を引き付けます。</p>
+              <h3>使用技術</h3>
+              <p>Spring Boot/HTML/CSS/Java/JavaScript/Spring Security/Spring Data JPA/<br>
+                Thymeleaf/MySQL</p>
+          </div>
+          <div class="home-link">
+            <a href="index.html#works">Works一覧へ</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="page-top" id="js-page-top">
+        <span class="material-icons-outlined">expand_less</span>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="copyright">&copy;MATSUBARA NATSUKI</div>
+    </footer>
+    <!-- /footer -->
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type='text/javascript' src="js/script.js"></script>
+</body>
+
+</html>

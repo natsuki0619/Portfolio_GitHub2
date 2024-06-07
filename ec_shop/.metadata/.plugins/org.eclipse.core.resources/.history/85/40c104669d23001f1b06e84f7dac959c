@@ -1,0 +1,29 @@
+// drag-and-drop.js
+
+// ドラッグ許可
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+// ドラッグ開始
+function drag(event) {
+    event.dataTransfer.setData("text", event.target.id);
+}
+
+// ドロップ
+function drop(event) {
+    event.preventDefault();
+    const data = event.dataTransfer.getData("text");
+    const item = document.getElementById(data);
+    const price = parseInt(item.getAttribute("data-price"), 10);
+    addToCart(price);
+}
+
+// カートに追加
+function addToCart(price) {
+    const totalElement = document.getElementById("total-price");
+    const currentTotal = parseInt(totalElement.getAttribute("data-total"), 10) || 0;
+    const newTotal = currentTotal + price;
+    totalElement.setAttribute("data-total", newTotal);
+    totalElement.textContent = `合計金額: ¥${newTotal}`;
+}

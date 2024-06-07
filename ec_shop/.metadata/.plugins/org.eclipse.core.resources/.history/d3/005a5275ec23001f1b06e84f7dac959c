@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+ <html xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">    
+     <head>
+         <div th:replace="~{fragment :: meta}"></div>   
+              
+         <div th:replace="~{fragment :: styles}"></div>
+           
+         <title>商品詳細</title>   　
+     </head>
+     <body>
+         <div class="ecshop-wrapper">
+             <!-- ヘッダー -->
+             <div th:replace="~{fragment :: header}"></div>
+             
+             <main>
+                 <div class="container pt-4 pb-5 ecshop-container">
+                     <div class="row justify-content-center">
+                         <div class="col-xxl-9 col-xl-10 col-lg-11">
+                             <nav class="mb-4" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                                 <ol class="breadcrumb mb-0">                        
+                                     <li class="breadcrumb-item"><a th:href="@{/}">ホーム</a></li>
+                                
+                                     <li class="breadcrumb-item active" aria-current="page">商品詳細</li>
+                                 </ol>
+                             </nav> 
+                             
+                             <h1 class="mb-4 text-center" th:text="${goods.getName()}"></h1>                                                           
+                             
+                             <div th:if="${errorMessage}" class="alert alert-danger">
+                                 <span th:text="${errorMessage}"></span>
+                             </div>                                                                         
+                             
+                             <img th:if="${goods.getImageName()}" th:src="@{'/static/images/' + ${goods.getImageName()}}" class="w-100" alt="商品画像">
+<img th:unless="${goods.getImageName()}" th:src="@{/images/noImage.png}" class="w-100" alt="NO IMAGE">
+
+                             
+                             <div class="container">  
+                                 <div class="row">
+                                     <div class="col-lg-8 container mb-4">            
+                                         <div class="row pb-2 mb-2 border-bottom">
+                                             <div class="col-4">
+                                                 <span class="fw-bold">商品名</span>
+                                             </div>
+                     
+                                             <div class="col">
+                                                 <span th:text="${goods.getName()}"></span>
+                                             </div>
+                                         </div>                    
+                     
+                                         <div class="row pb-2 mb-2 border-bottom">
+                                             <div class="col-4">
+                                                 <span class="fw-bold">説明</span>
+                                             </div>
+                     
+                                             <div class="col">
+                                                 <span class="ecshop-pre-wrap" th:text="${goods.getDescription()}"></span>
+                                             </div>
+                                         </div>
+                     
+                                         <div class="row pb-2 mb-2 border-bottom">
+                                             <div class="col-4">
+                                                 <span class="fw-bold">価格</span>
+                                             </div>
+                     
+                                             <div class="col">
+                                                 <span th:text="${#numbers.formatInteger(goods.getPrice(), 1, 'COMMA') + '円'}"></span>
+                                             </div>
+                                         </div> 
+                                         
+                                        <div class="row pb-2 mb-2 border-bottom">
+                                             <div class="col-4">
+                                                 <span class="fw-bold">在庫</span>
+                                             </div>
+                     
+                                             <div class="col">
+                                                 <span th:text="${goods.getStock() + '個'}"></span>
+                                             </div>
+                                         </div>                                
+                                         
+                                         <div class="row pb-2 mb-2 border-bottom">
+                                             <div class="col-4">
+                                                 <span class="fw-bold">カテゴリ</span>
+                                             </div>
+                     
+                                             <div class="col">
+                                                 <span th:text="${goods.getCategoryId()}"></span>
+                                             </div>
+                                         </div>   
+                                         
+                                                     
+                                     </div>
+                                     
+                                     <div sec:authorize="isAnonymous()" class="col-lg-4 px-0 ps-lg-4 mb-4">                  
+                                         <div class="card">
+                                             <div class="card-body">                                                                                                                                                                                                                     
+                                                 <p class="card-text">購入するには<a th:href="@{/login}">ログイン</a>が必要です。</p>                                                                                                                                            
+                                                 <button type="submit" class="btn text-white shadow-sm w-100 ecshop-btn" disabled>予約する</button>                                                                                                                
+                                             </div>
+                                         </div>  
+                                     </div>                                                                                                                     
+                                 </div>                                                                                             
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </main>
+             
+             <!-- フッター -->
+             <div th:replace="~{fragment :: footer}"></div>
+         </div>    
+         
+         <div th:replace="~{fragment :: scripts}"></div>  
+   </body>
+ </html>

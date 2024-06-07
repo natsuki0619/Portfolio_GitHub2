@@ -1,0 +1,5 @@
+package com.example.ecshop.event;
+
+public class SignupEventListener {
+
+}

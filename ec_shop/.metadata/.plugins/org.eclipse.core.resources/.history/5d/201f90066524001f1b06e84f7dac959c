@@ -1,0 +1,39 @@
+package com.example.ecshop.controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.example.ecshop.Repository.GoodsRepository;
+import com.example.ecshop.entity.Goods;
+
+@Controller
+public class HomeController {
+
+	private final GoodsRepository goodsRepository;
+
+	public HomeController(GoodsRepository goodsRepository) {
+		this.goodsRepository = goodsRepository;
+	}
+
+
+	
+
+	@GetMapping("/show/{id}")
+	public String show(@PathVariable(name = "id") Integer id, Model model) {
+		Goods goods = goodsRepository.getReferenceById(id);
+		model.addAttribute("goods", goods);
+		return "goods/show";
+	}
+
+	@GetMapping("/")
+	public String getGoods(Model model) {
+		List<Goods> goodsList = goodsRepository.findAll();
+		model.addAttribute("goodsList", goodsList);
+		return "index"; // "index.html" テンプレートをレンダリングする
+	}
+
+}

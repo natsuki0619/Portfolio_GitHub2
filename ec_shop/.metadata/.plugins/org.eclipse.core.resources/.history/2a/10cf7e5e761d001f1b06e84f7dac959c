@@ -1,0 +1,166 @@
+ <!DOCTYPE html>
+ <html xmlns:th="https://www.thymeleaf.org">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">    
+              
+         <!-- Bootstrap -->
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+         
+         <!-- Google Fonts -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">   
+         
+         <link th:href="@{/css/style.css}" rel="stylesheet" >
+         
+         <title>商品一覧</title>       
+     </head>
+     <body>
+		 HTML
+<nav class="navbar navbar-light bg-light p-3">
+  <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
+      <a class="navbar-brand" href="#">
+          Simple Dashboard
+      </a>
+      <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  </div>
+  <div class="col-12 col-md-4 col-lg-2">
+      <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search">
+  </div>
+  <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
+      <div class="mr-3 mt-1">
+          <a class="github-button" href="https://github.com/themesberg/simple-bootstrap-5-dashboard" data-color-scheme="no-preference: dark; light: light; dark: light;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star /themesberg/simple-bootstrap-5-dashboard">Star</a>
+      </div>
+      <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+            Hello, John Doe
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Messages</a></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+  </div>
+</nav>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+<nav class="navbar navbar-light bg-light p-3">
+  <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
+      <a class="navbar-brand" href="#">
+          Simple Dashboard
+      </a>
+      <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  </div>
+  <div class="col-12 col-md-4 col-lg-2">
+      <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search">
+  </div>
+  <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
+      <div class="mr-3 mt-1">
+          <a class="github-button" href="https://github.com/themesberg/simple-bootstrap-5-dashboard" data-color-scheme="no-preference: dark; light: light; dark: light;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star /themesberg/simple-bootstrap-5-dashboard">Star</a>
+      </div>
+      <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+            Hello, John Doe
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Messages</a></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+  </div>
+</nav
+         <div class="samuraitravel-wrapper">
+             <!-- ヘッダー -->
+             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm samuraitravel-navbar">
+                 <div class="container samuraitravel-container">
+                     <a class="navbar-brand" th:href="@{/}">                        
+                         <img class="samuraitravel-logo me-1" th:src="@{/images/logo.png}" alt="SAMURAI Travel">                        
+                     </a>                                                                    
+                 </div>
+             </nav>
+             
+             <main>
+                 <div class="container pt-4 pb-5 samuraitravel-container">
+                     <div class="row justify-content-center">
+                         <div class="col-xxl-9 col-xl-10 col-lg-11">
+                             
+                             <h1 class="mb-4 text-center">商品一覧</h1>   
+                             
+                             <div class="d-flex justify-content-end">                                
+                                 <a href="#" class="btn text-white shadow-sm mb-3 samuraitravel-btn">登録</a>
+                             </div>                                                          
+                             
+                             <table class="table">
+                                 <thead>
+                                     <tr>
+                                         <th scope="col">ID</th>
+                                         <th scope="col">商品名</th>
+                                         <th scope="col">商品説明</th>
+                                         <th scope="col">価格</th>
+                                         <th scope="col">在庫数</th>
+                                         <th scope="col">カテゴリ</th>
+                                         <th scope="col"></th>                                        
+                                     </tr>
+                                 </thead>   
+                                 <tbody>                                                     
+                                     <tr th:each="goods : ${goods}">
+                                         <td th:text="${goods.getId()}"></td>
+                                         <td th:text="${goods.getName()}"></td>
+                                         <td th:text="${goods.getDescription()}"></td>
+                                         <td th:text="${goods.getPrice()}"></td>
+                                         <td th:text="${goods.getStock()}"></td>
+                                          <td th:text="${goods.getCategoryId()}"></td>
+                                         <td><a href="#">詳細</a></td>                                                                                
+                                     </tr>                                      
+                                 </tbody>
+                             </table>                                       
+                         </div>
+                     </div>
+                 </div>              
+             </main>
+             
+             <!-- フッター -->
+             <footer>
+                 <div class="d-flex justify-content-center align-items-center h-100">
+                     <p class="text-center text-muted small mb-0">&copy; SAMURAI Travel All rights reserved.</p>      
+                 </div>                 
+             </footer>
+         </div>    
+         
+         <!-- Bootstrap -->
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>        
+     </body>
+ </html>

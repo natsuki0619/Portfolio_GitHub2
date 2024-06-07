@@ -1,0 +1,133 @@
+ html {
+   font-size: 14px;
+ }
+
+ body {
+   font-family: 'Noto Sans JP', sans-serif;
+ }
+
+ h1 {
+   font-size: 1.5rem;
+ }
+
+ a {
+   color: #888888;
+   text-decoration: none !important;
+ }
+
+ a:hover {
+     color: #CCCCCC;
+ }
+
+ footer {
+   width: 100%;
+   height: 60px;
+   position: absolute;
+   bottom: 0;
+   background-color: #f2f0eb;
+ }
+
+ .ecshop-wrapper {
+   min-height: 100vh;
+   position: relative;
+   padding-bottom: 60px;
+   box-sizing: border-box;
+ }
+
+ .ecshop-navbar {
+   min-height: 60px;
+ }
+
+ .ecshop-logo {
+   height: 30px;
+ }
+
+ .ecshop-btn {
+   background-color: #000 !important;
+   transition: 0.1s;
+ }
+
+ .ecshop:hover {
+   opacity: 0.8;
+ }
+ 
+          body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .ecshop-navbar {
+            background-color: #343a40;
+        }
+        .ecshop-navbar .navbar-brand img {
+            max-height: 40px;
+        }
+        .ecshop-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .breadcrumb {
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+        .breadcrumb a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .breadcrumb .breadcrumb-item.active {
+            color: #6c757d;
+        }
+        .ecshop-pre-wrap {
+            white-space: pre-wrap;
+        }
+        .ecshop-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+        }
+        .fw-bold {
+            font-weight: bold;
+        }
+ /* ページネーション */
+ .ecshop-page-link {
+   color: #000;
+ }
+
+ .ecshop-page-link:hover {
+   color: #fff;
+   background-color: #6c757d;
+   border-color: #6c757d;
+ }
+
+ .ecshop-active {
+    background-color: #CCCCCC !important;
+    border-color: #CCCCCC !important;
+    color: #000;
+ }
+ 
+  .ecshop-pre-wrap {
+   /* 改行文字で行を折り返す */
+   white-space: pre-wrap;
+ }
+
+ @media screen and (min-width: 1400px) {
+   .ecshop-container {
+     max-width: 1200px;
+   }
+
+
+ }

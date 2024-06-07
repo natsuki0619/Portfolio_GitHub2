@@ -1,0 +1,9 @@
+package com.example.ecshop.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.ecshop.entity.Goods;
+
+public interface GoodsRepository extends JpaRepository<Goods, Integer> {
+
+}
